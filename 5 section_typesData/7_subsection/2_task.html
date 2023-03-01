@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отфильтруйте анаграммы</title>
+</head>
+<body>
+    <script>
+        // Анаграммы – это слова, у которых те же буквы в том же количестве, но они располагаются в другом порядке.
+        // Например:
+        // nap - pan
+        // ear - are - era
+        // cheaters - hectares - teachers
+        // Напишите функцию aclean(arr), которая возвращает массив слов, очищенный от анаграмм.
+        // Из каждой группы анаграмм должно остаться только одно слово, не важно какое.
+        // Например:
+
+        function aclean(arr) {
+            let obj = {};
+
+            for (let i = 0; i < arr.length; i++) {
+                let sorted = arr[i].toLowerCase().split("").sort().join("");
+                obj[sorted] = arr[i];
+            }
+            return Object.values(obj);
+        }
+
+        let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+        alert( aclean(arr) ); // PAN, cheaters, era
+    </script>
+</body>
+</html>

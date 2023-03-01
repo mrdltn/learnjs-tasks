@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Последнее число месяца?</title>
+</head>
+<body>
+    <script>
+        // Напишите функцию getLastDayOfMonth(year, month), возвращающую последнее число месяца. Иногда это 30, 31 или даже февральские 28/29.
+        // Параметры:
+        // year – год из четырёх цифр, например, 2012.
+        // month – месяц от 0 до 11.
+        // К примеру, getLastDayOfMonth(2012, 1) = 29 (високосный год, февраль).
+
+        function getLastDayOfMonth(year, month) {
+            let date = new Date(year, month + 1, 0); // счет месяца с нуля, потому добавляем 1 к месяцу
+            return date.getDate();
+        }
+
+        alert( getLastDayOfMonth(2023, 1) ); // 28 дней в фервале 2023 г.
+        alert( getLastDayOfMonth(2023, 2) ); // 31 дней в марте 2023 г.
+        alert( getLastDayOfMonth(2023, 5) ); // 30 дней в июне 2023 г.
+    </script>
+</body>
+</html>

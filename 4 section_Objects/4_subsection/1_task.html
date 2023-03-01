@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Использование "this" в литерале объекта</title>
+</head>
+<body>
+    <script>
+        // Здесь функция makeUser возвращает объект.
+        // Каким будет результат при обращении к свойству объекта ref? Почему?
+
+        function makeUser() {
+            return {
+                name: "John",
+                ref: this // значение this равно undefined
+                // ref() { return this;} // вот так сработает
+            };
+        }
+
+        let user = makeUser();
+
+        alert( user.ref.name ); // this вызывается как функция, потому alert выдаст ошибку
+        // alert (user.ref().name) // John // вызов сработает, this вызывается как метод
+    </script>
+</body>
+</html>

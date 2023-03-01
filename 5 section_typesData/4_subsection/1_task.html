@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Скопирован ли массив?</title>
+</head>
+<body>
+    <script>
+        // Что выведет следующий код?
+        let fruits = ["Яблоки", "Груша", "Апельсин"];
+
+        // // добавляем новое значение в "копию"
+        let shoppingCart = fruits; // теперь две переменные ссылаются на один и тот же массив
+
+        shoppingCart.push("Банан"); // ["Яблоки", "Груша", "Апельсин", "Банан"];
+
+        // // что в fruits?
+        alert( fruits.length ); // тоже самое, что и в массиве shoppingCart => ["Яблоки", "Груша", "Апельсин", "Банан"];
+    </script>
+</body>
+</html>

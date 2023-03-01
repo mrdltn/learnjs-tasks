@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Максимальная зарплата</title>
+</head>
+<body>
+    <script>
+        // У нас есть объект salaries с зарплатами:
+
+        let salaries = {
+            "John": 100,
+            "Pete": 300,
+            "Mary": 250,
+            "Daniil": 111,
+        };
+        // Создайте функцию topSalary(salaries), которая возвращает имя самого высокооплачиваемого сотрудника.
+        // Если объект salaries пустой, то нужно вернуть null.
+        // Если несколько высокооплачиваемых сотрудников, можно вернуть любого из них.
+        // P.S. Используйте Object.entries и деструктурирование, чтобы перебрать пары ключ/значение.
+
+        function topSalary(salaries) {
+            let currentMax = 0;
+            let currentWorker = null;
+  
+            for (let [worker, salary] of Object.entries(salaries)) {
+                if (salary > currentMax) {
+                currentMax = salary;
+                currentWorker = worker;
+                }
+            }
+            return currentWorker;
+        }
+
+        alert(topSalary(salaries)); // Pete
+    </script>
+</body>
+</html>

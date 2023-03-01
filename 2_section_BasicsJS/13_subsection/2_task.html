@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Какие значения выведет цикл while?</title>
+</head>
+<body>
+    <script>
+        // Для каждого цикла запишите, какие значения он выведет. Потом сравните с ответом.
+        // Оба цикла выводят alert с одинаковыми значениями или нет?
+
+        // Префиксный вариант ++i:
+
+        let i = 0;
+        while (++i < 5) alert( i ); // 1 2 3 4 (сначала увеличение, потом сравнение, а после вызов alert)
+
+        // Постфиксный вариант i++
+
+        let a = 0;
+        while (a++ < 5) alert( a ); // 1 2 3 4 5 (сначала сравнение, потом увеличение, а после вызов alert)
+    </script>
+</body>
+</html>

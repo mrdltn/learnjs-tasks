@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Случайное число от min до max</title>
+</head>
+<body>
+    <script>
+        // Встроенный метод Math.random() возвращает случайное число от 0 (включительно) до 1 (но не включая 1)
+        // Напишите функцию random(min, max), которая генерирует случайное число с плавающей точкой от min до max (но не включая max).
+        // Пример работы функции:
+
+        // alert( random(1, 5) ); // 1.2345623452
+        // alert( random(1, 5) ); // 3.7894332423
+        // alert( random(1, 5) ); // 4.3435234525
+
+        // поскольку метод Math.random() возвращает случайное число от 0 (включительно) до 1 (не включительно),
+        // то, случайное число от 0 до 1 умножим на max-min и прибавим к этому min, т.к. число max  не учитывается по условию задачи
+        function random(min, max) {
+            return min + Math.random() * (max - min);
+        }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Две функции - один объект</title>
+</head>
+<body>
+    <script>
+        // Возможно ли создать функции A и B, чтобы new A() == new B()?
+
+        // function A() { ... }
+        // function B() { ... }
+
+        // let a = new A();
+        // let b = new B();
+
+        // alert( a == b ); // true
+        // Если да – приведите пример вашего кода.
+
+        //  Если функция возвращает объект, то new вернёт его вместо this. Так, функции могут, например, возвращать один и тот же объект obj
+        
+        let obj = {};
+
+        function A() { return obj; }
+        function B() { return obj; }
+
+        let a = new A();
+        let b = new B();
+
+        alert( a == b ); // true
+    </script>
+</body>
+</html>
